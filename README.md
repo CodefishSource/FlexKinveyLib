@@ -2,7 +2,7 @@ FlexKinveyLib
 =============
 Flex SDK/AS3 integration with Kinvey BaaS RESTUL API
 
-The purpose of this library is to ease communication with Kinvey by Converting JSON Objects retrieved from Kinvey into AS3 Typed Objects. Very Similar to what Hibernates is to Java. (But offcource not even 1% Close functionality wise)  
+The purpose of this library is to ease communication with Kinvey by Converting JSON Objects retrieved from Kinvey into AS3 Typed Objects. Very Similar to what Hibernate is to Java. (But offcource not even 1% Close functionality wise)  
 
 //Initialize Kinvey
 Kinvey.instance.initialize("appkey","token","username","password",[PurchaseItems,Themes,ThemeCategory],defaultFaultHandler);
@@ -69,13 +69,13 @@ private function userExists(exists:Boolean,user:String):void
 
 //Load Collection Examples
 public function loadAllThemes(callBack:Function):void{
-		var auth:int = App.instance.userLoggedIn ? Kinvey.AUTH_TOKEN : Kinvey.AUTH_PUBLIC;
-		new CollectionCritria("Theme",null,auth).resolve("category").addFilter("isPrivate",false).addResultHandler(callBack).list();
+	var auth:int = App.instance.userLoggedIn ? Kinvey.AUTH_TOKEN : Kinvey.AUTH_PUBLIC;
+	new CollectionCritria("Theme",null,auth).resolve("category").addFilter("isPrivate",false).addResultHandler(callBack).list();
 }
 public function loadPurchasedItem(id:String=null, result:Function=null):void{
 	var collection:CollectionCritria = new CollectionCritria("PurchaseItem").addFilter("user",Kinvey.instance.currentUser.id).resolveAll("3").addResultHandler(ViewUtil.partial(loadPurchasedItemResult,result));
-collection.addFilter("_id", id);
-collection.list();
+	collection.addFilter("_id", id);
+	collection.list();
 }
 public function loadPurchasedItemResult(resultHandler:Function,result:Array):void{
 }
