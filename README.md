@@ -1,9 +1,9 @@
 FlexKinveyLib
 =============
-Flex SDK/AS3 integration with Kinvey BaaS RESTUL API
+Flex SDK/AS3 integration with Kinvey BaaS REST API
 
 The purpose of this library is to ease communication with Kinvey by Converting JSON Objects retrieved from Kinvey into AS3 Typed Objects. Very Similar to what Hibernate is to Java.
-
+re
 Kinvey.instance.initialize("appkey","token","username","password",[PurchaseItems,Themes,ThemeCategory],defaultFaultHandler);
 
 Kinvey.instance.login(username,password,resultHandler,loginFaultHandler);
